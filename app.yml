@@ -1,0 +1,18 @@
+metadata:
+  name: hello-wise
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: wise
+  template:
+    metadata:
+      labels:
+        app: wise
+    spec:
+      containers:
+      - name: wise
+        image: nigelpoulton/ps-web:wise
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
